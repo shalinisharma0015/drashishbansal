@@ -771,15 +771,17 @@
  <!-- Fancybox JS -->
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
         <!-- popup JS -->
- <script>
+<script>
 function openPopup() {
   document.getElementById("popupBox").style.display = "block";
   document.getElementById("popupOverlay").style.display = "block";
+  document.getElementById("navbar").style.display = "none"; // navbar hide
 }
 
 function closePopup() {
   document.getElementById("popupBox").style.display = "none";
   document.getElementById("popupOverlay").style.display = "none";
+  document.getElementById("navbar").style.display = "block"; // navbar show
 }
 
 // sabhi buttons par event listener lagana
@@ -791,6 +793,7 @@ document.querySelectorAll(".openBtn").forEach(btn => {
 document.getElementById("closePopup").addEventListener("click", closePopup);
 document.getElementById("popupOverlay").addEventListener("click", closePopup);
 </script>
+
 
 
          <script type="text/javascript" style="display:none">
