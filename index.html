@@ -179,7 +179,7 @@
                                 <h1>GI & Liver Transplants Surgeon</h1>
                                 <p>Experienced cholecystectomy complication including bile leak, residual CBD stones, choledochal cysts, bariatric surgery and GI oncology.</p>
                                 <div class="common-btn">
-                                    <a href="#" id="openPopup">Get Appointment</a>
+                                    <a href="#" class="openBtn">Get Appointment</a>
                                     <a class="cmn-btn-right" href="about.html">Read More</a>
                                 </div>
                             </div>
@@ -198,7 +198,7 @@
                                  <h1>Caring for Liver, Pancreas & Digestive Health</h1>
                                 <p>From pancreatic health to advanced liver treatments, every patient receives dedicated care.</p>
                                 <div class="common-btn">
-                                   <a href="#" id="openPopup2">Get Appointment</a>
+                                   <a href="#" class="openBtn">Get Appointment</a>
                                     <a class="cmn-btn-right" href="about.html">Read More</a>
                                 </div>
                             </div>
@@ -217,7 +217,7 @@
                                   <h1>Caring for Every Patient, Every Step</h1>
                                 <p>From diagnosis to recovery, Dr. Ashish Bansal ensures trusted and personalized care.</p>
                                 <div class="common-btn">
-                                    <a href="#" id="openPopup3">Get Appointment</a>
+                                    <a href="#" class="openBtn">Get Appointment</a>
                                     <a class="cmn-btn-right" href="about.html">Read More</a>
                                 </div>
                             </div>
@@ -771,81 +771,28 @@
  <!-- Fancybox JS -->
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
         <!-- popup JS -->
-   <script>
-  const openPopup = document.getElementById("openPopup");
-  const closePopup = document.getElementById("closePopup");
-  const popupBox = document.getElementById("popupBox");
-  const popupOverlay = document.getElementById("popupOverlay");
-  const navbar = document.getElementById("navbar");
+ <script>
+function openPopup() {
+  document.getElementById("popupBox").style.display = "block";
+  document.getElementById("popupOverlay").style.display = "block";
+}
 
-  openPopup.addEventListener("click", function(e){
-    e.preventDefault();
-    popupBox.style.display = "block";
-    popupOverlay.style.display = "block";
-    document.body.style.overflow = "hidden"; 
-    navbar.style.display = "none"; // hide navbar
-  });
+function closePopup() {
+  document.getElementById("popupBox").style.display = "none";
+  document.getElementById("popupOverlay").style.display = "none";
+}
 
-  function closeModal() {
-    popupBox.style.display = "none";
-    popupOverlay.style.display = "none";
-    document.body.style.overflow = "auto";
-    navbar.style.display = "block"; // show navbar again
-  }
+// sabhi buttons par event listener lagana
+document.querySelectorAll(".openBtn").forEach(btn => {
+  btn.addEventListener("click", openPopup);
+});
 
-  closePopup.addEventListener("click", closeModal);
-  popupOverlay.addEventListener("click", closeModal);
+// overlay aur close button par bhi close karna
+document.getElementById("closePopup").addEventListener("click", closePopup);
+document.getElementById("popupOverlay").addEventListener("click", closePopup);
 </script>
-   <script>
-  const openPopup2 = document.getElementById("openPopup2");
-  const closePopup = document.getElementById("closePopup");
-  const popupBox = document.getElementById("popupBox");
-  const popupOverlay = document.getElementById("popupOverlay");
-  const navbar = document.getElementById("navbar");
 
-  openPopup2.addEventListener("click", function(e){
-    e.preventDefault();
-    popupBox.style.display = "block";
-    popupOverlay.style.display = "block";
-    document.body.style.overflow = "hidden"; 
-    navbar.style.display = "none"; // hide navbar
-  });
 
-  function closeModal() {
-    popupBox.style.display = "none";
-    popupOverlay.style.display = "none";
-    document.body.style.overflow = "auto";
-    navbar.style.display = "block"; // show navbar again
-  }
-
-  closePopup.addEventListener("click", closeModal);
-  popupOverlay.addEventListener("click", closeModal);
-</script>
-		   <script>
-  const openPopup3 = document.getElementById("openPopup3");
-  const closePopup = document.getElementById("closePopup");
-  const popupBox = document.getElementById("popupBox");
-  const popupOverlay = document.getElementById("popupOverlay");
-  const navbar = document.getElementById("navbar");
-
-  openPopup3.addEventListener("click", function(e){
-    e.preventDefault();
-    popupBox.style.display = "block";
-    popupOverlay.style.display = "block";
-    document.body.style.overflow = "hidden"; 
-    navbar.style.display = "none"; // hide navbar
-  });
-
-  function closeModal() {
-    popupBox.style.display = "none";
-    popupOverlay.style.display = "none";
-    document.body.style.overflow = "auto";
-    navbar.style.display = "block"; // show navbar again
-  }
-
-  closePopup.addEventListener("click", closeModal);
-  popupOverlay.addEventListener("click", closeModal);
-</script>
          <script type="text/javascript" style="display:none">
 //<![CDATA[
 window.__mirage2 = {petok:"5ZpYYAf.9yJ2IZayy9FECTmBMsuWG9KZRtv6Da5vilc-1754476890.3742747-0.0.1.1"};
